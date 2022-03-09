@@ -42,4 +42,4 @@ token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgY
 ```
 </p>
 
-<b>P.S. sometimes the proxies dont work you have to be patient!</b>
+<b>P.S. if you are getting 429 Too Many Requests thats the proxies fault you have to be patient to cycle through valid proxies again</b>
