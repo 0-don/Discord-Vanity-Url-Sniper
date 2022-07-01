@@ -7,7 +7,7 @@ import os
 import time
 
 # pip install requests lxml
-vanity_url = "uhasdfhajnd"
+vanity_url = "wappejkv"
 guild_id = "693908423486143824"
 webhook = "https://discord.com/api/webhooks/693908423486143824/BwKrOBsuhjkhjkhjkhkjf26swxxjeFUPRuDaWj2LDmrJft"
 token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgYH1"
@@ -45,9 +45,10 @@ class Change:
         payload = {"code": vanity_url}
         response = ""
         while response == "":
+            self.proxy = next(self.proxy_pool)
             try:
                 response = requests.patch(
-                    f"https://discord.com/api/v9/guilds/{guild_id}/vanity-url", headers=self.headers, json=payload, proxies={"http": self.proxy})
+                    f"https://discord.com/api/v9/guilds/{guild_id}/vanity-url", headers=self.headers, json=payload, proxies={"https": self.proxy})
                 if response.status_code == 200:
                     data = {
                         "content": f"Vanity URL : discord.gg/{vanity_url} has been sniped successfully! | GGs :flushed: ", "username": "Bot."}
@@ -59,6 +60,7 @@ class Change:
                     print(
                         f"Unknown Error! Could not snipe discord.gg/{vanity_url}! Status Code : {response.status_code} | Better luck next time :(")
             except:
+                print(f"error change_vanity: {self.proxy}")
                 time.sleep(1)
 
     def check_vanity(self):
@@ -66,15 +68,17 @@ class Change:
             self.proxy = next(self.proxy_pool)
             response = ""
             while response == "":
+                self.proxy = next(self.proxy_pool)
                 try:
                     response = requests.get(
-                        f"https://discord.com/api/v9/invites/{vanity_url}?with_counts=true&with_expiration=true",  proxies={"http": self.proxy})
+                        f"https://discord.com/api/v9/invites/{vanity_url}?with_counts=true&with_expiration=true",  proxies={"https": self.proxy})
                     if response.status_code == 404 | response.status_code == 401:
                         Change().change_vanity()
                     else:
                         print(
                             f'Status code: {response.status_code} - Proxy: {self.proxy} - still taken. attempting to snipe discord.gg/{vanity_url}')
                 except:
+                    print(f"error check vanity: {self.proxy}")
                     time.sleep(1)
 
 
