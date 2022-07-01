@@ -7,7 +7,7 @@ import os
 import time
 
 # pip install requests lxml
-vanity_url = "your_url"
+vanity_url = "code"
 guild_id = "693908423486143824"
 webhook = "https://discord.com/api/webhooks/693908423486143824/BwKrOBsuhjkhjkhjkhkjf26swxxjeFUPRuDaWj2LDmrJft"
 token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgYH1"
@@ -60,11 +60,11 @@ class Change:
             response = ""
             while response == "":
                 try:
-                    response = requests.get(f"https://discord.com/api/v9/invites/{vanity_url}?with_counts=true&with_expiration=true", headers=self.headers, proxies={"http": self.proxy})
+                    response = requests.get(f"https://discord.com/api/v9/invites/{vanity_url}?with_counts=true&with_expiration=true",  proxies={"http": self.proxy})
                     if response.status_code == 404:
                         Change().change_vanity()
                     else:
-                        print(f'Status code: {response.status_code} - Proxy: {self.proxy} - still taken. [attempting to snipe discord.gg/{vanity_url}')
+                        print(f'Status code: {response.status_code} - Proxy: {self.proxy} - still taken. attempting to snipe discord.gg/{vanity_url}')
                 except:
                     time.sleep(1)
 
