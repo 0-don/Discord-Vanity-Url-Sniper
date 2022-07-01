@@ -30,7 +30,7 @@ vanity_url = "your_url"
 guild_id = "693908423486143824"
 ```
 
-#### 4. Change token with your Discord account token which has admin privilleges <a href="https://www.youtube.com/watch?v=TFUG3Tx50bY">Example video</a>
+#### 4. Change token with your Discord account token which has admin privilleges <a href="https://www.youtube.com/watch?v=fKksxz2Gdnc">Example video</a>
 
 ```py
 token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgYH1"
