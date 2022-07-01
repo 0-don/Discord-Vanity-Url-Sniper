@@ -49,7 +49,7 @@ class Change:
             try:
                 url = f"https://discord.com/api/v9/guilds/{guild_id}/vanity-url"
                 response = requests.patch(
-                    url, timeout=5, headers=self.headers, json=payload, proxies={"https": self.proxy})
+                    url, timeout=10, headers=self.headers, json=payload, proxies={"https": self.proxy})
                 if response.status_code == 200:
                     data = {
                         "content": f"Vanity URL : discord.gg/{vanity_url} has been sniped successfully! | GGs :flushed: ", "username": "Bot."}
@@ -73,7 +73,7 @@ class Change:
                 try:
                     url = f"https://discord.com/api/v9/invites/{vanity_url}?with_counts=true&with_expiration=true"
                     # print(url)
-                    response = requests.get(url, timeout=5,  proxies={
+                    response = requests.get(url, timeout=10,  proxies={
                                             "https": self.proxy})
                     if response.status_code == 404 or response.status_code == 401:
                         Change().change_vanity()
