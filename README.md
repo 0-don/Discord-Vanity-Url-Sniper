@@ -35,7 +35,7 @@ guild_id = "693908423486143824"
 webhook = "https://discord.com/api/webhooks/693908423486143824/BwKrOBsuhjkhjkhjkhkjf26swxxjeFUPRuDaWj2LDmrJft"
 ```
 
-#### 5. Change token with your Discord account token which has admin privilleges <a href="https://www.youtube.com/watch?v=TFUG3Tx50bY">Example video</a>
+#### 5. Change token with your Discord account token which has admin privilleges <a href="https://www.youtube.com/watch?v=LnBnm_tZlyU">Example video</a>
 
 ```py
 token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgYH1"
