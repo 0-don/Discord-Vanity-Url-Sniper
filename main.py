@@ -9,7 +9,6 @@ import time
 # pip install requests lxml
 vanity_url = "wappejasdasdkv"
 guild_id = "9396788123117356767342"
-webhook = "https://discord.com/api/webhooks/9917887264564688681984/B4eTZWOEpeAW3bRqIsadasdrYdLW1VWXdxRFF-4guhvs1L_HbhPCRQS8u4X8gfhfghjLNsOnW0e86i00x"
 token = "OTkyNDEyNjMzNzAzNjQ1MjM0.GdxtGK.bNdBWB5uHNF-RVtAT45eQtqlZev9rAEQqM3doE"
 
 
@@ -51,9 +50,6 @@ class Change:
                 response = requests.patch(
                     url, timeout=10, headers=self.headers, json=payload, proxies={"https": self.proxy})
                 if response.status_code == 200:
-                    data = {
-                        "content": f"Vanity URL : discord.gg/{vanity_url} has been sniped successfully! | GGs :flushed: ", "username": "Bot."}
-                    requests.post(webhook, json=data)
                     print(
                         f"{self.datetime}VANITY SNIPED : discord.gg/{vanity_url} has been sniped successfully!")
                     os._exit(1)
