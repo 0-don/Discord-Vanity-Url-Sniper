@@ -8,9 +8,9 @@ import time
 
 # pip install requests lxml
 vanity_url = "wappejasdasdkv"
-guild_id = "693908423486143824"
-webhook = "https://discord.com/api/webhooks/693908423486143824/BwKrOBsuhjkhjkhjkhkjf26swxxjeFUPRuDaWj2LDmrJft"
-token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgYH1"
+guild_id = "9396788123117356767342"
+webhook = "https://discord.com/api/webhooks/9917887264564688681984/B4eTZWOEpeAW3bRqIsadasdrYdLW1VWXdxRFF-4guhvs1L_HbhPCRQS8u4X8gfhfghjLNsOnW0e86i00x"
+token = "OTkyNDEyNjMzNzAzNjQ1MjM0.GdxtGK.bNdBWB5uHNF-RVtAT45eQtqlZev9rAEQqM3doE"
 
 
 def grab_proxies():
@@ -44,7 +44,7 @@ class Change:
     def change_vanity(self):
         payload = {"code": vanity_url}
         response = ""
-        while response == "":
+        while response == "" or response.status_code == 200:
             self.proxy = next(self.proxy_pool)
             try:
                 url = f"https://discord.com/api/v9/guilds/{guild_id}/vanity-url"
