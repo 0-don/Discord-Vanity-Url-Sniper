@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Don-Cryptus/echat">
+  <a href="https://github.com/Don-Cryptus/Discord-Vanity-Url-Sniper">
     <img src="images/discord-sniper.png" alt="Logo" width=400 />
   </a>
 
@@ -7,9 +7,9 @@
     <br />
     <b>Discord</b> <b>Custom</b> url <b>Sniper</b> with proxies
     <br />
-    <a href="https://github.com/Don-Cryptus/DiscordCustomUrlSniper/issues">Report Bug</a>
+    <a href="https://github.com/Don-Cryptus/Discord-Vanity-Url-Sniper/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Don-Cryptus/DiscordCustomUrlSniper/issues">Request Feature</a>
+    <a href="https://github.com/Don-Cryptus/Discord-Vanity-Url-Sniper/issues">Request Feature</a>
     <br />
   </p>
 
@@ -19,21 +19,23 @@
   pip install -r requirements.txt
   ```
 
-#### 2. Change vanity url that you want to snipe
+#### 2. create .env file as in example
 
-```py
-vanity_url = "your_url"
+```sh
+VANITY_URL=testingtesting
+GUILD_ID=9054168492797956147
+TOKEN=Mjc1MjMxNzI3OTQzOTQyMTQ3
 ```
 
 #### 3. Change it to your server ID <a href="https://www.youtube.com/watch?v=NLWtSHWKbAI">Example video</a>
-```py
-guild_id = "693908423486143824"
+```sh
+GUILD_ID=9054168492797956147
 ```
 
 #### 4. Change token with your Discord account token which has admin privilleges <a href="https://www.youtube.com/watch?v=fKksxz2Gdnc">Example video</a>
 
 ```py
-token = "mfa.BmuKasdasdaCf9IPnlwwWb8uZTdnneBUhKLghjgsXp5rY44bPk9fRgRmMOnvdfgdfgYH1"
+TOKEN=Mjc1MjMxNzI3OTQzOTQyMTQ3
 ```
 </p>
 

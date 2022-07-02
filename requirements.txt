@@ -1,3 +1,4 @@
 requests
-fake-useragent
+user-agent
 beautifulsoup4
+python-dotenv
