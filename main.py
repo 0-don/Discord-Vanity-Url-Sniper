@@ -77,7 +77,7 @@ class Sniper:
                 print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} proxy is free trying to change: {self.proxy}")
                 self.change_vanity()
             elif response.status_code == 200:
-                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} Proxy is good: {self.proxy} but url is still taken")
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} Proxy is good: {self.proxy} but url is still taken, sleeping for 30 seconds")
                 time.sleep(30)
                 self.check_vanity()
             elif response.status_code == 429:
