@@ -58,33 +58,34 @@ class Sniper:
         return proxies
 
     def change_vanity(self):
-        url = f"https://discord.com/api/v9/guilds/{guild_id}/vanity-url"
+        url = f"https://discord.com/api/v9/guilds/{self.guild_id}/vanity-url"
         response = self.request(url=url, type="patch", proxies={"https": self.proxy})
-        if response.status_code == 200:
-            print(f"{self.datetime} VANITY SNIPED : discord.gg/{vanity_url} has been sniped successfully!")
-            os._exit(1)
-        else:
-            print(f"Could not snipe discord.gg/{vanity_url}! Status Code : {response.status_code} | Better luck next time :(")
+        try:
+            if response.status_code == 200:
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} VANITY SNIPED : discord.gg/{self.vanity_url} has been sniped successfully!")
+                os._exit(1)
+            else:
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} Could not snipe discord.gg/{self.vanity_url}! Status Code : {response.status_code} | Better luck next time :(")
+        except:
+            print(f"change vanity: {response}")
 
     def check_vanity(self):
         url = f"https://discord.com/api/v9/invites/{self.vanity_url}?with_counts=true&with_expiration=true"
         response = self.request(url=url, type="get", proxies={"https": self.proxy})
         try:
             if response.status_code == 404:
-                print(f"proxy is free trying to change: {self.proxy}")
-                # os._exit(1)
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} proxy is free trying to change: {self.proxy}")
                 self.change_vanity()
             elif response.status_code == 200:
-                print(f'Proxy is good: {self.proxy} but url is still taken')
-                # os._exit(1)
-                time.sleep(5)
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} Proxy is good: {self.proxy} but url is still taken")
+                time.sleep(30)
+                self.check_vanity()
             elif response.status_code == 429:
-                print(f'Proxy has made to many requests: {self.proxy}')
-                next(self.proxy_pool)
-            elif response.status_code:
-                print(f'Status code: {response.status_code} - Proxy: {self.proxy} - still taken. attempting to snipe discord.gg/{self.vanity_url}')
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} Proxy has made to many requests: {self.proxy}")
+            else:
+                print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} Status code: {response.status_code} - Proxy: {self.proxy} - still taken. attempting to snipe discord.gg/{self.vanity_url}")
         except:
-            print(response)
+            print(f"{datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]')} check vanity: {response}")
                     
     def request(self, url, type, proxies):
         try:
@@ -93,19 +94,17 @@ class Sniper:
             elif(type == "patch"):
                 return self.session.patch(url, timeout=5, proxies=proxies, headers=self.headers, json=self.payload)
         except requests.exceptions.Timeout:
-            self.proxy = next(self.proxy_pool)
-            return f"Timeout: {self.proxy}"
+            return f"Timeout - {self.proxy}"
         except requests.exceptions.ProxyError:
-            self.proxy = next(self.proxy_pool)
-            return f"ProxyError: {self.proxy}"
+            return f"ProxyError - {self.proxy}"
         except requests.exceptions.SSLError:
-            self.proxy = next(self.proxy_pool)
-            return f"SSLError: {self.proxy}"
+            return f"SSLError - {self.proxy}"
     
     def start(self):
-        self.check_vanity()
+        while self.proxy != "end":
+            self.check_vanity()
+            self.proxy = next(self.proxy_pool)
+        Sniper().start()
         
 
-            
 Sniper().start()
-# print(datetime.now().strftime('[On %Y-%m-%d @ %H:%M:%S]'))
