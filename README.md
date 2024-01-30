@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/Don-Cryptus/Discord-Vanity-Url-Sniper">
+  <a href="https://github.com/0-don/Discord-Vanity-Url-Sniper">
     <img src="images/discord-sniper.png" alt="Logo" width=400 />
   </a>
 
@@ -7,9 +7,9 @@
     <br />
     <b>Discord</b> <b>Custom</b> url <b>Sniper</b> with proxies
     <br />
-    <a href="https://github.com/Don-Cryptus/Discord-Vanity-Url-Sniper/issues">Report Bug</a>
+    <a href="https://github.com/0-don/Discord-Vanity-Url-Sniper/issues">Report Bug</a>
     ·
-    <a href="https://github.com/Don-Cryptus/Discord-Vanity-Url-Sniper/issues">Request Feature</a>
+    <a href="https://github.com/0-don/Discord-Vanity-Url-Sniper/issues">Request Feature</a>
     <br />
   </p>
 
