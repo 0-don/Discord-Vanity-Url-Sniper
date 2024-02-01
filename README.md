@@ -19,7 +19,7 @@
   pip install -r requirements.txt
   ```
 
-#### 2. create .env file as in example
+#### 2. edit .env file
 
 ```sh
 VANITY_URL=testingtesting
