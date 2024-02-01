@@ -32,7 +32,7 @@ TOKEN=Mjc1MjMxNzI3OTQzOTQyMTQ3
 GUILD_ID=9054168492797956147
 ```
 
-#### 4. Change token with your Discord account token which has admin privilleges on the specifc server <a href="https://www.youtube.com/watch?v=fKksxz2Gdnc">Example video</a>
+#### 4. Change token with your Discord account token which has admin privilleges on the specifc server <a href="https://www.youtube.com/watch?v=YEgFvgg7ZPI">Example video</a>
 
 ```sh
 TOKEN=Mjc1MjMxNzI3OTQzOTQyMTQ3
